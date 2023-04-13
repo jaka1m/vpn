@@ -23,10 +23,18 @@ start=$(date +%s)
 apt update -y
 apt full-upgrade -y
 apt dist-upgrade -y
-apt install git -y
-apt install zip -y
-apt install unzip -y
-apt install p7zip-full -y
+apt update -y
+    apt upgrade -y
+    apt dist-upgrade -y
+    apt-get remove --purge ufw firewalld -y
+    apt-get remove --purge exim4 -y
+    sudo apt-get remove --purge exim4 -y
+    apt -y install jq
+    apt -y install wget curl
+    apt install git -y
+    apt install zip -y
+    apt install unzip -y
+    apt install p7zip-full -y
 apt install socat curl screen cron neofetch screenfetch netfilter-persistent vnstat fail2ban -y
 mkdir /backup
 mkdir /user
@@ -715,7 +723,7 @@ net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 # MENU
 wget -O ~/menu.zip "https://raw.githubusercontent.com/jaka1m/vpn/main/menu/menu.zip" >/dev/null 2>&1
     mkdir /root/menu
-    7z e -pGeoOrangGanteng   ~/menu.zip -o/root/menu/ >/dev/null 2>&1
+    7z e -p1234   ~/menu.zip -o/root/menu/ >/dev/null 2>&1
     chmod +x /root/menu/*
     mv /root/menu/* /usr/local/sbin/
     
